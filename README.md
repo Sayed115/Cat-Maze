@@ -1,30 +1,24 @@
 # Project_one
+# Maze escape
+# Date 5/9/2024
+# By Sayed Mohamed
 
-## hungman
-
-### It involves a person choosing a word and specifying the number of letters, and the second player guessing the letters to make the word. You have a specific number of wrong letters that you will choose.
-
-### All letters will appear to you. If the letter is correct, it will be placed in its correct place in the word; if it is wrong, part of the gallows will be drawn. 
-
-### The game will end when the man is hanged (it's the name of the game)
-
-* HTML
-* CSS
-* Java script
-
-
-
-///////////////////////////////////////////////////
-
-## the maze
+## Description
 
 ### its 2d game where you need to escape from a maze, some example you on the somewhere and you need to go to the door to escape but the way is confusing there are ways not correct you need to go in the correct way to get the door, the door will travel you to next level.
 
-### the game will have l levels 
+### the game will have 3 levels 
 
 ### the movemoent controls on the keyboard
 
-
+### **_Techonlge Used_**
 * HTML
 * CSS
 * Java script
+
+### **_Getiing Stardted_**
+* the project must be approved by the instructors before start
+* A wireframe of main game page
+* Detailled the game in the Readme
+
+### **_Credits_**
