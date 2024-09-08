@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    background-color: black;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+#board {
+    display: grid;
+    grid-template-columns: repeat(10, 60px);
+    grid-template-rows: repeat(10, 60px);
+    background-color: white;
+    gap: 1px;
+    padding: 1px;
+    position: relative;
+}
+.square {
+    width: 60px;
+    height: 60px;
+    background-color: darkgray;
+    display: inline-block;
+    border: 1px solid;
+}
+h1 {
+    color: white;
+}
+#player {
+    background-color: blue;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    transition: left 0.2s, top 0.2s;
+}
+button {
+    margin: 5px;
+}
