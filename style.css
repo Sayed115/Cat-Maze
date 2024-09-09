@@ -12,16 +12,16 @@ body {
     grid-template-columns: repeat(10, 60px);
     grid-template-rows: repeat(10, 60px);
     background-color: white;
-    gap: 1px;
+    
     padding: 1px;
     position: relative;
 }
 .square {
     width: 60px;
     height: 60px;
-    background-color: darkgray;
+    background-color:#6E260E;
     display: inline-block;
-    border: 1px solid;
+    
 }
 h1 {
     color: white;
@@ -47,5 +47,5 @@ button {
     grid-column: 10;    
 }
 .blocked {
-    background-color: black;
+    background-color:#E97451;
 }

@@ -3,10 +3,7 @@ let gameOver = false;
 
 let players = document.querySelector('#player');
 let winPoint = document.querySelector('#winArea');
-let moveUp = up;
-let moveDown = down;
-let moveLeft = left;
-let moveRight = right;
+const text = document.querySelector('h1')
 
 
 
@@ -20,10 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const rowSize = 10; 
     
     //blocking square
-    const blockedSquares = [11, 12, 22, 32, 42, 52];
+    const blockedSquares = [2, 4, 5, 6, 10, 12, 16, 17, 18, 24, 31, 33, 34, 35, 36, 37, 39, 41, 43, 47 , 51, 53, 55, 57, 58, 61, 62, 65, 67, 71, 74, 77, 79, 83, 86, 87, 89, 90, 91, 92, 93, 96, 97];
     blockedSquares.forEach(index => {
         squares[index].classList.add('blocked');
     });
+
+    // Function to check if a position is blocked
+    const isBlocked = (position) => {
+        return blockedSquares.includes(position);
+    };
+    
+    //const checkdrop = () => {
+     //   if (playerPosition = blockedSquares) {
+       //     gameOver = true;
+       //     console.log("youdrop")
+       // }
+   // }
 
     
   
@@ -40,26 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkWin = () => {
         if (playerPosition === 99) {
             gameOver = true;
-            console.log("gameover")
+            console.log("gameover");
+            text.innerText = ("you win")
+            //alert("You win")
         }
         
     }
     const moveUp = () => {
         const newPosition = playerPosition - rowSize;
-        if (newPosition >= 0) {
+        if (newPosition >= 0 && !isBlocked(newPosition)) {
             playerPosition = newPosition;
             updatePlayerPosition();
-            blockedSquares[2, 12, 22, 32, 42, 52];
             checkWin();
         }
     };
 
     const moveDown = () => {
         const newPosition = playerPosition + rowSize;
-        if (newPosition < squares.length) {
+        if (newPosition < squares.length && !isBlocked(newPosition)) {
             playerPosition = newPosition;
             updatePlayerPosition();
-            blockedSquares[2, 12, 22, 32, 42, 52];
             checkWin();
         }
     };
@@ -67,20 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const moveLeft = () => {
         if (playerPosition % rowSize > 0) {
             const newPosition = playerPosition - 1;
-            playerPosition = newPosition;
-            updatePlayerPosition();
-            blockedSquares[2, 12, 22, 32, 42, 52];
-            checkWin();
+            if (!isBlocked(newPosition)) {
+                playerPosition = newPosition;
+                updatePlayerPosition();
+                checkWin();
+            }
         }
     };
 
     const moveRight = () => {
         if (playerPosition % rowSize < rowSize - 1) {
             const newPosition = playerPosition + 1;
-            playerPosition = newPosition;
-            updatePlayerPosition();
-            blockedSquares[2, 12, 22, 32, 42, 52];
-            checkWin();
+            if (!isBlocked(newPosition)) {
+                playerPosition = newPosition;
+                updatePlayerPosition();
+                checkWin();
+            }
         }
     };
 
@@ -92,6 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     updatePlayerPosition();
+
+    if (gameOver || playerPosition === 99) {
+        text.innerText = ("you win")
+    }
 });
 
 
