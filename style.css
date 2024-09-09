@@ -32,7 +32,7 @@ h1 {
     height: 60px;
     border-radius: 50%;
     position: absolute;
-    
+    transition: left 0.5s, top 0.5s;
 }
 button {
     margin: 5px;
@@ -45,4 +45,7 @@ button {
     position: absolute;
     grid-row: 10;
     grid-column: 10;    
+}
+.blocked {
+    background-color: black;
 }
