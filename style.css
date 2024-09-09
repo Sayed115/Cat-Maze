@@ -32,8 +32,17 @@ h1 {
     height: 60px;
     border-radius: 50%;
     position: absolute;
-    transition: left 0.2s, top 0.2s;
+    
 }
 button {
     margin: 5px;
+}
+#winArea {
+    background-color: yellow;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    grid-row: 10;
+    grid-column: 10;    
 }

@@ -1,11 +1,15 @@
-//movement 
 
+let gameOver = false;
+
+
+
+//Player movement 
 document.addEventListener('DOMContentLoaded', () => {
     const player = document.getElementById('player');
     const board = document.getElementById('board');
     const squares = Array.from(board.getElementsByClassName('square'));
-    let playerPosition = 0; // Starts at the first square
-    const rowSize = 10; // Number of squares per row
+    let playerPosition = 0; 
+    const rowSize = 10; 
   
     const updatePlayerPosition = () => {
       const square = squares[playerPosition];
@@ -42,19 +46,19 @@ document.addEventListener('DOMContentLoaded', () => {
   
       updatePlayerPosition();
     };
-  
-    // Add console.log to debug button selection
-    console.log(document.getElementById('right')); // This should log the right button or null if not found
-  
+    
     document.getElementById('up').addEventListener('click', () => movePlayer('up'));
     document.getElementById('down').addEventListener('click', () => movePlayer('down'));
     document.getElementById('left').addEventListener('click', () => movePlayer('left'));
-    document.getElementById('right').addEventListener('click', () => movePlayer('right')); // Ensure correct spelling here!
+    document.getElementById('right').addEventListener('click', () => movePlayer('right')); 
   
     updatePlayerPosition();
   });
 
   console.log(document.getElementById('right'));
+
+
+  
 
 
 
