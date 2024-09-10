@@ -12,16 +12,16 @@ body {
     grid-template-columns: repeat(10, 60px);
     grid-template-rows: repeat(10, 60px);
     background-color: white;
-    
     padding: 1px;
     position: relative;
+    border-color: aliceblue; 
 }
 .square {
     width: 60px;
     height: 60px;
     background-color:#6E260E;
     display: inline-block;
-    
+    border: black;
 }
 h1 {
     color: white;
@@ -44,8 +44,23 @@ button {
     border-radius: 50%;
     position: absolute;
     grid-row: 10;
-    grid-column: 10;    
+    grid-column: 10;
+        
+}
+#bomb {
+    background-color: black;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    grid-row: 10;
+    grid-column: 8;
+    visibility: hidden;
 }
 .blocked {
     background-color:#E97451;
+    border: 5px;
+    border-color: black;
+    border-radius: 8px;
+    
 }

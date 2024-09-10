@@ -3,8 +3,8 @@ let gameOver = false;
 
 let players = document.querySelector('#player');
 let winPoint = document.querySelector('#winArea');
-const text = document.querySelector('h1')
-
+let bomb = document.querySelector('#bomb');
+const text = document.querySelector('h1');
 
 
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rowSize = 10; 
     
     //blocking square
-    const blockedSquares = [2, 4, 5, 6, 10, 12, 16, 17, 18, 24, 31, 33, 34, 35, 36, 37, 39, 41, 43, 47 , 51, 53, 55, 57, 58, 61, 62, 65, 67, 71, 74, 77, 79, 83, 86, 87, 89, 90, 91, 92, 93, 96, 97];
+    const blockedSquares = [2, 4, 5, 6, 10, 12, 16, 17, 18, 24, 31, 33, 34, 35, 36, 37, 39, 41, 43, 47 , 51, 53, 55, 57, 58, 61, 62, 65, 67, 71, 74, 77, 79, 83, 86, 87, 89, 90, 91, 92, 93];
     blockedSquares.forEach(index => {
         squares[index].classList.add('blocked');
     });
@@ -26,15 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const isBlocked = (position) => {
         return blockedSquares.includes(position);
     };
-    
-    //const checkdrop = () => {
-     //   if (playerPosition = blockedSquares) {
-       //     gameOver = true;
-       //     console.log("youdrop")
-       // }
-   // }
-
-    
   
     const updatePlayerPosition = () => {
         const square = squares[playerPosition];
@@ -52,15 +43,30 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("gameover");
             text.innerText = ("you win")
             //alert("You win")
+            winPoint.style.visibility = 'visible';
         }
         
     }
+
+    //bomb
+    const bombs = () => {
+        if (playerPosition === 97) {
+            gameOver = true;
+            text.innerText = ("you Lose")
+            bomb.style.visibility = 'visible';
+        }
+    }
+
+
+
+    
     const moveUp = () => {
         const newPosition = playerPosition - rowSize;
         if (newPosition >= 0 && !isBlocked(newPosition)) {
             playerPosition = newPosition;
             updatePlayerPosition();
             checkWin();
+            bombs();
         }
     };
 
@@ -70,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerPosition = newPosition;
             updatePlayerPosition();
             checkWin();
+            bombs();
         }
     };
 
@@ -80,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 playerPosition = newPosition;
                 updatePlayerPosition();
                 checkWin();
+                bombs();
             }
         }
     };
@@ -91,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 playerPosition = newPosition;
                 updatePlayerPosition();
                 checkWin();
+                bombs();
             }
         }
     };
@@ -99,14 +108,34 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('up').addEventListener('click', moveUp);
     document.getElementById('down').addEventListener('click', moveDown);
     document.getElementById('left').addEventListener('click', moveLeft);
-    document.getElementById('right').addEventListener('click', moveRight); 
+    document.getElementById('right').addEventListener('click', moveRight)
 
+    //keyboard controls
+    window.addEventListener("keydown", (event) => {
+      
+        if (event.key === 'ArrowRight') {
+            moveRight()
+        }
+        if (event.key === 'ArrowDown') {
+            moveDown()
+        }
+        if (event.key === 'ArrowUp') {
+            moveUp()
+        }
+        if (event.key === 'ArrowLeft') {
+            moveLeft()
+        }
+    });
+    
     
     updatePlayerPosition();
 
     if (gameOver || playerPosition === 99) {
         text.innerText = ("you win")
     }
+
+    
+
 });
 
 
