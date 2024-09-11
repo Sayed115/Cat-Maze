@@ -64,7 +64,7 @@ button {
     position: absolute;
     grid-row: 9;
     grid-column: 10;
-    visibility: visible;
+    visibility: hidden;
     background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fbig%2F550-5509344_bomb-clip-art.png&f=1&nofb=1&ipt=ddc2f4447a19f120e183c11d3c91e1ae7f2e268a431a5ec9b1eb1d18fcb92989&ipo=images);
     background-size: cover;
 }
@@ -75,7 +75,7 @@ button {
     position: absolute;
     grid-row: 9;
     grid-column: 12;
-    visibility: visible;
+    visibility: hidden;
     background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fbig%2F550-5509344_bomb-clip-art.png&f=1&nofb=1&ipt=ddc2f4447a19f120e183c11d3c91e1ae7f2e268a431a5ec9b1eb1d18fcb92989&ipo=images);
     background-size: cover;
 }

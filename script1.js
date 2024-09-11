@@ -169,6 +169,10 @@ function moveToGame () {
     location.href = 'main-page.html';
 }
 
+function moveToGame2 () {
+    location.href = 'level2.html'
+}
+
 function giveAlert() {
     alert('Coming Soon...');
 }

@@ -4,6 +4,7 @@ let moveNumber = document.querySelector('#moven');
 let players = document.querySelector('#player');
 let winPoint = document.querySelector('#winArea');
 let bomb = document.querySelector('#bomb');
+let bomb2 = document.querySelector('#bomb2');
 const text = document.querySelector('h1');
 
 
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rowSize = 12; 
     
     //blocking square
-    const blockedSquares = [];
+    const blockedSquares = [5, 25, 26, 15, 17, 19, 20, 21, 24, 27, 29, 33, 37, 38, 47, 51, 53, 54, 56, 58, 59, 61, 63, 66, 71, 73, 75, 78, 81, 85, 87, 90, 91, 94, 97, 101, 110, 111, 112, 116, 121, 124, 126, 138, 140, 141, 142, 143, 104, 117];
     blockedSquares.forEach(index => {
         squares[index].classList.add('blocked');
     });
@@ -65,11 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
             text.innerText = ("you Lose")
             bomb.style.visibility = 'visible';
         }
+        
+    }
+    const bombs2 = () => {
         if (playerPosition === 107) {
             gameOver = true;
             text.innerText = ("you Lose")
-            bomb.style.visibility = 'visible';
+            bomb2.style.visibility = 'visible';
         }
+
     }
 
 
@@ -84,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updatePlayerPosition();
             checkWin();
             bombs();
+            bombs2();
             movementCount++;
             updateMovementDisplay();
         }
@@ -98,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updatePlayerPosition();
             checkWin();
             bombs();
+            bombs2();
             movementCount++;
             updateMovementDisplay();
         }
@@ -113,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updatePlayerPosition();
                 checkWin();
                 bombs();
+                bombs2();
                 movementCount++;
                 updateMovementDisplay();
             }
@@ -129,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updatePlayerPosition();
                 checkWin();
                 bombs();
+                bombs2();
                 movementCount++;
                 updateMovementDisplay();
             }
@@ -164,3 +173,15 @@ document.addEventListener('DOMContentLoaded', () => {
     updateMovementDisplay();
 
 });
+
+function resetPage() {
+    location.href = 'level2.html';
+}
+
+function moveToGame () {
+    location.href = 'main-page.html';
+}
+
+function giveAlert() {
+    alert('Coming Soon...');
+}
