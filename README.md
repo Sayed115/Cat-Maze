@@ -39,4 +39,4 @@
 
 ### 
 ### **_Credits_**
-##### Funny Images: [Cat Maze](catmazep1.surge.sh)
+##### The game: [Cat Maze](catmazep1.surge.sh)
