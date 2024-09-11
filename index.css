@@ -1,0 +1,33 @@
+body {
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjooinn.com%2Fimages%2Fwood-background-1.jpg&f=1&nofb=1&ipt=c03d7dfc6de65f878656cbedbd751f2c6f4a23717f3f21dd18520e37170122bc&ipo=images);
+    background-size: cover;
+}
+#head {
+    text-align: center;
+    font-size: 80px;
+    color: white;
+}
+#levels {
+    
+    display: flex;
+    justify-content: center;
+    
+    margin-left: 50px;
+    
+}
+#lv1, #lv2, #lv3 {
+    width: 200px;
+    height: 100px;
+    margin: 150px 0;
+    font-size: 25px;
+    border: 1.5px solid;
+    border-color: black;
+    background-color: #955251;
+} 
+#lv2 {
+    margin: 150px 50px;
+
+}
+button {
+    cursor: pointer;
+}

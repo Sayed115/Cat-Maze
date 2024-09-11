@@ -1,6 +1,9 @@
 body {
     margin: 0;
-    background-color: black;
+    background-color: rgb(61, 79, 87);
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjooinn.com%2Fimages%2Fwood-background-1.jpg&f=1&nofb=1&ipt=c03d7dfc6de65f878656cbedbd751f2c6f4a23717f3f21dd18520e37170122bc&ipo=images);
+    background-position: center;
+    background-size: contain;
     height: 100vh;
     align-items: center;
     justify-content: center;
@@ -8,38 +11,44 @@ body {
     flex-direction: column;
 }
 #board {
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.XKKqrEQKqylQ_gloYpI8AAHaEo%26pid%3DApi&f=1&ipt=5a2ce8ab9b0e855c82b4dc8aa4ff9ef408cd2930dda69dd5b312bf6dbd2f6825&ipo=images);
+    background-size: cover;
     display: grid;
     grid-template-columns: repeat(10, 60px);
     grid-template-rows: repeat(10, 60px);
-    background-color: white;
-    padding: 1px;
+    background-color: rgb(239, 225, 195);
     position: relative;
-    border-color: aliceblue; 
+    border: 8px solid rgb(47, 43, 35);
+    margin: 0;
+    padding: 2px;
 }
 .square {
     width: 60px;
     height: 60px;
-    background-color:#6E260E;
-    display: inline-block;
-    border: black;
+    margin: 0;
 }
 h1 {
     color: white;
     text-align: center;
 }
 #player {
-    background-color: blue;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimages%2F8cGK88Kca.png&f=1&nofb=1&ipt=254b2df29e29d0f584dfe9178e0df65dc1106e464b2862e8624cd4b59889f8f8&ipo=images);
+    background-size: cover;
+    width: 55px;
+    height: 55px;;
     position: absolute;
     transition: left 0.5s, top 0.5s;
+    
+
 }
 button {
     margin: 5px;
 }
 #winArea {
-    background-color: yellow;
+    
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F011%2F458%2F703%2Foriginal%2Ffish-cartoon-icon-clipart-png.png&f=1&nofb=1&ipt=92a91fd4cf5ffdcd8ec0e0edbe77db38287240f90046a679fb6ea18ad00b62b0&ipo=images);
+    background-size: cover;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -49,7 +58,7 @@ button {
         
 }
 #bomb {
-    background-color: black;
+    
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -57,14 +66,14 @@ button {
     grid-row: 10;
     grid-column: 8;
     visibility: hidden;
-    background-image: url(https://www.pngall.com/wp-content/uploads/5/Fuse-Bomb-PNG-Free-Image.png);
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fbig%2F550-5509344_bomb-clip-art.png&f=1&nofb=1&ipt=ddc2f4447a19f120e183c11d3c91e1ae7f2e268a431a5ec9b1eb1d18fcb92989&ipo=images);
+    background-size: cover;
 }
 .blocked {
-    background-color:#E97451;
-    border: 5px;
-    border-color: black;
-    border-radius: 8px;
     
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.sketchuptextureclub.com%2Fpublic%2Ftexture_d%2F98-walnut-wood-fine-medium-color-texture-seamless-hr.jpg&f=1&nofb=1&ipt=9a2a8556f5eb5d7b1f787b0fe61ab76004aed54c55fc9f04e2c8a16086619f9b&ipo=images);
+    background-size: cover;
+    border-radius: 10%;
 }
 #moven {
     color: white;
@@ -77,7 +86,30 @@ button {
     width: 100px;
     height: 50px;
     font-size: 22px;
-    position: fixed;
-    justify-content: end;
+    margin-top: 10px; 
+    float: end;
+    
 }
-
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    
+}
+#bmove {
+    margin-left: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#up, #left, #down, #right {
+    width: 60px;
+    height: 30px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+}
+#allb {
+    display: flex;
+    flex-direction: row;
+}

@@ -165,10 +165,13 @@ function resetPage() {
     location.href = 'main-page.html';
 }
 
+function moveToGame () {
+    location.href = 'main-page.html';
+}
 
-
-
-
+function giveAlert() {
+    alert('Coming Soon...');
+}
 
 
 
