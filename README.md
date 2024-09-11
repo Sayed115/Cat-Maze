@@ -8,7 +8,7 @@
 ### its 2d game where you need to escape from a maze, some example you on the somewhere and you need to go to the door to escape but the way is confusing there are ways not correct you need to go in the correct way to get the door, the door will travel you to next level.
 
 
-## How to Play
+## **_How to Play_**
 * the movemoent controls on the keyboard and screen
 * you need to arrive the cat to the fish
 * Watch out for bombs
@@ -18,8 +18,6 @@
 * HTML
 * CSS
 * Java script
-
-
 
 
 ### **_Getiing Stardted_**
@@ -32,4 +30,12 @@
 * count the movement
 * creat a bomb
 
+
+### **_Future Updates_**
+- [ ] Add more levels
+- [ ] fix the glitches
+
+
+
+### 
 ### **_Credits_**
