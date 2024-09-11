@@ -39,6 +39,6 @@
 
 ### 
 ### **_Credits_**
-##### The game: [Cat Maze](catmazep1.surge.sh)
+##### The game: [Cat Maze](https://catmazep1.surge.sh/)
 
-* catmazep1.surge.sh
+
