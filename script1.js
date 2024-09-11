@@ -1,6 +1,7 @@
 
 let gameOver = false;
-
+let movementCount = 0;
+let moveNumber = document.querySelector('#moven');
 let players = document.querySelector('#player');
 let winPoint = document.querySelector('#winArea');
 let bomb = document.querySelector('#bomb');
@@ -8,7 +9,7 @@ const text = document.querySelector('h1');
 
 
 
-//Player movement && check winner
+
 document.addEventListener('DOMContentLoaded', () => {
     const playerElement = document.getElementById('player');
     const board = document.getElementById('board');
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return blockedSquares.includes(position);
     };
   
+    //player position
     const updatePlayerPosition = () => {
         const square = squares[playerPosition];
         const rect = square.getBoundingClientRect();
@@ -36,14 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
         playerElement.style.top = `${rect.top - boardRect.top}px`;
     };
 
+    //display numbers of move
+    const updateMovementDisplay = () => {
+        const movementDisplay = document.querySelector('#moven');
+        if (movementDisplay) {
+            movementDisplay.innerText = `Move's: ${movementCount}`;
+        }
+    };
+    
+
     //checking win
     const checkWin = () => {
         if (playerPosition === 99) {
             gameOver = true;
-            console.log("gameover");
-            text.innerText = ("you win")
+            
+            text.innerText = (`You win with: ${movementCount + 1} move's!`)
             //alert("You win")
-            winPoint.style.visibility = 'visible';
+            
         }
         
     }
@@ -59,28 +70,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    
+    //movement
     const moveUp = () => {
+        if (gameOver) return;
+
         const newPosition = playerPosition - rowSize;
         if (newPosition >= 0 && !isBlocked(newPosition)) {
             playerPosition = newPosition;
             updatePlayerPosition();
             checkWin();
             bombs();
+            movementCount++;
+            updateMovementDisplay();
         }
     };
-
+    //movement
     const moveDown = () => {
+        if (gameOver) return;
+
         const newPosition = playerPosition + rowSize;
         if (newPosition < squares.length && !isBlocked(newPosition)) {
             playerPosition = newPosition;
             updatePlayerPosition();
             checkWin();
             bombs();
+            movementCount++;
+            updateMovementDisplay();
         }
     };
-
+    //monement
     const moveLeft = () => {
+        if (gameOver) return;
+
         if (playerPosition % rowSize > 0) {
             const newPosition = playerPosition - 1;
             if (!isBlocked(newPosition)) {
@@ -88,11 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 updatePlayerPosition();
                 checkWin();
                 bombs();
+                movementCount++;
+                updateMovementDisplay();
             }
         }
     };
-
+    //movement
     const moveRight = () => {
+        if (gameOver) return;
+
         if (playerPosition % rowSize < rowSize - 1) {
             const newPosition = playerPosition + 1;
             if (!isBlocked(newPosition)) {
@@ -100,11 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 updatePlayerPosition();
                 checkWin();
                 bombs();
+                movementCount++;
+                updateMovementDisplay();
             }
         }
     };
 
-    
+    //buttons controls
     document.getElementById('up').addEventListener('click', moveUp);
     document.getElementById('down').addEventListener('click', moveDown);
     document.getElementById('left').addEventListener('click', moveLeft);
@@ -128,16 +155,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     
+
     updatePlayerPosition();
-
-    if (gameOver || playerPosition === 99) {
-        text.innerText = ("you win")
-    }
-
-    
+    updateMovementDisplay();
 
 });
 
+function resetPage() {
+    location.href = 'main-page.html';
+}
 
 
 
