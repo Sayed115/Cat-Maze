@@ -1,4 +1,3 @@
-
 let gameOver = false;
 let movementCount = 0;
 let moveNumber = document.querySelector('#moven');
@@ -15,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const board = document.getElementById('board');
     const squares = Array.from(board.getElementsByClassName('square'));
     let playerPosition = 0; 
-    const rowSize = 10; 
+    const rowSize = 12; 
     
     //blocking square
-    const blockedSquares = [2, 4, 5, 6, 10, 12, 16, 17, 18, 24, 31, 33, 34, 35, 36, 37, 39, 41, 43, 47 , 51, 53, 55, 57, 58, 61, 62, 65, 67, 71, 74, 77, 79, 83, 86, 87, 89, 90, 91, 92, 93];
+    const blockedSquares = [];
     blockedSquares.forEach(index => {
         squares[index].classList.add('blocked');
     });
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //checking win
     const checkWin = () => {
-        if (playerPosition === 99) {
+        if (playerPosition === 118) {
             gameOver = true;
             
             text.innerText = (`You win with: ${movementCount + 1} move's!`)
@@ -61,7 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //bomb
     const bombs = () => {
-        if (playerPosition === 97) {
+        if (playerPosition === 105) {
+            gameOver = true;
+            text.innerText = ("you Lose")
+            bomb.style.visibility = 'visible';
+        }
+        if (playerPosition === 107) {
             gameOver = true;
             text.innerText = ("you Lose")
             bomb.style.visibility = 'visible';
@@ -160,41 +164,3 @@ document.addEventListener('DOMContentLoaded', () => {
     updateMovementDisplay();
 
 });
-
-function resetPage() {
-    location.href = 'main-page.html';
-}
-
-function moveToGame () {
-    location.href = 'main-page.html';
-}
-
-function giveAlert() {
-    alert('Coming Soon...');
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
