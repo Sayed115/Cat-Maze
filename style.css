@@ -113,3 +113,17 @@ button {
     display: flex;
     flex-direction: row;
 }
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu, #nextp {
+    height: 70px;
+    width: 120px;
+    background-color: transparent;
+    color: white;
+    font-size: x-large;
+    border: 1px solid;
+}
+

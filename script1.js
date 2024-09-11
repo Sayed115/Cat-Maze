@@ -165,16 +165,20 @@ function resetPage() {
     location.href = 'main-page.html';
 }
 
-function moveToGame () {
+function moveToGame() {
     location.href = 'main-page.html';
 }
 
-function moveToGame2 () {
+function moveToGame2() {
     location.href = 'level2.html'
 }
 
 function giveAlert() {
     alert('Coming Soon...');
+}
+
+function seloctor() {
+    location.href = 'index.html';
 }
 
 
