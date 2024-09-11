@@ -1,5 +1,5 @@
 # Project_one
-# Maze escape
+# Cat Maze
 # Date 5/9/2024
 # By Sayed Mohamed
 
@@ -39,3 +39,4 @@
 
 ### 
 ### **_Credits_**
+##### Funny Images: [Cat Maze]()
